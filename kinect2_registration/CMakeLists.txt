@@ -22,7 +22,7 @@ ENDIF()
 # additional cmake modules
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
-find_package(catkin REQUIRED COMPONENTS roscpp)
+find_package(catkin REQUIRED COMPONENTS roscpp  moveit_ros_planning_interface)
 find_package(cmake_modules QUIET)
 
 ## System dependencies are found with CMake's conventions
@@ -39,7 +39,7 @@ endif()
 ## Check for modules being build based on found libraries ##
 ############################################################
 
-if(Eigen3_FOUND)
+if(EIGEN3_FOUND)
   message(STATUS "CPU based depth registration enabled")
   include_directories(${EIGEN3_INCLUDE_DIRS})
   set(DEPTH_REG_CPU ON)
